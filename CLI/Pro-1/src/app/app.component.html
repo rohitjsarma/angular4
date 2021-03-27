@@ -1,0 +1,52 @@
+
+<form #cf1="ngForm" class="f">
+  <h1>Template Driven Form</h1>
+First Name:<br>
+<input type="text" [(ngModel)]="firstname" name="firstname" required="required" minlength="5" maxlength="10" pattern="^[a-zA-Z]*$" #control1="ngModel">
+<span *ngIf="control1.touched && control1.errors && control1.errors.required">Name is mandatory</span>
+<span *ngIf="control1.touched && control1.errors && control1.errors.minlength">Minimum 5 char </span>
+<span *ngIf="control1.touched && control1.errors && control1.errors.pattern">Only Alphabets are allowed </span>
+<br>
+Lastname:<br>
+		<input type="text" [(ngModel)]="lastname" name="lastname" required="required" minlength="5" maxlength="20" pattern="^[a-zA-Z ]*$" #control2="ngModel">
+    <span class="error" *ngIf="control2.touched && control2.errors && control2.errors.required">Lastname can't be blank</span>
+    <span *ngIf="control2.touched && control2.errors && control2.errors.minlength">Minimum 5 char </span>
+    <span *ngIf="control2.touched && control2.errors && control2.errors.pattern">Only Alphabets are allowed </span>
+<br>
+Email:<br>
+<input type="email" [(ngModel)]="email" name="email" required="required" #control3="ngModel" pattern="[a-z 0-9]+(\.[_a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+    <span *ngIf="control3.touched && control3.errors && control3.errors.required">Email is mandatory</span>
+    <span *ngIf="control3.touched && control3.errors && control3.errors.email">Not Valid Email</span>
+    <span *ngIf="control3.touched && control3.errors && control3.errors.pattern">Wrong pattern</span>
+    <br><br>
+Gender:
+Male:<input type="radio" name="gender" [(ngModel)]="gender" required="" #control4="ngModel" value="male" >
+Female:<input type="radio" name="gender" [(ngModel)]="gender" required="" #control4="ngModel" value="female" >
+    <span *ngIf="control4.touched && control4.errors && control4.errors.required">Required</span>
+    <span *ngIf="control4.invalid" style="color: red">Mandatory</span>
+<br>
+<br>
+
+   Select Country :
+   <select [(ngModel)]="country" name="country" required="required" #control7="ngModel" >
+			<option>India</option>
+			<option>Usa</option>
+			<option>Japan</option>
+			<option>China</option>
+			<option>Britain</option>
+		</select>
+	<span  *ngIf="control7.touched && control7.errors && control7.errors.required" style="color: red">Please Select Country</span><br><br>
+<br>
+Age:<br>
+<input type="number" [(ngModel)]="age" #control6="ngModel" min="5" max="40" required="" name="age">
+<span *ngIf=" control6.errors && control6.errors.min">Min Age should be  5</span>
+<span *ngIf="control6.touched && control6.errors && control6.errors.max">Max Age can be  40</span>
+<span *ngIf="control6.touched && control6.errors && control6.errors.required">Mandatory field</span>
+
+<br>
+<br>
+<button [disabled]="cf1.invalid">Submit</button>
+
+
+
+  </form>

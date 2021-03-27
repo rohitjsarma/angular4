@@ -1,0 +1,32 @@
+input[type=text]{
+    width: 15em;
+    border-radius: 3px;
+}
+input[type=email]{
+    width: 15em;
+    border-radius: 3px;
+}
+input[type=number]{
+    width: 15em;
+    border-radius: 3px;
+}
+
+input.ng-invalid.ng-touched
+{
+	border: 2px solid red;
+}
+input.ng-valid.ng-touched
+{
+	border: 2px solid green;
+}
+.f{
+border: 1px solid slateblue;
+width: 350px;
+height: 450px;
+position: relative;
+left: 41%;
+margin: 5px;
+padding: 5px;
+
+
+}

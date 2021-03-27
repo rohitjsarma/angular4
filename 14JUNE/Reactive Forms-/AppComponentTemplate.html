@@ -1,0 +1,63 @@
+<div>
+	<form [formGroup]="myform">
+		<h1>Reactive Forms</h1>
+
+		First Name:
+		<input type="text" formControlName="firstname">
+		<span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.errors && myform.controls.firstname.errors.required">Firstname can't be blank</span>
+		<span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.errors && myform.controls.firstname.errors.minlength">Min: 5 characters</span>
+		<span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.errors && myform.controls.firstname.errors.maxlength">Max: 20 characters</span>
+		<span class="error" *ngIf="myform.controls.firstname.touched && myform.controls.firstname.errors && myform.controls.firstname.errors.pattern">Alphabets only allowed</span>
+		<br>
+		
+		Last Name:
+		<input type="text" formControlName="lastname">
+		<span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.errors && myform.controls.lastname.errors.required">Lastname can't be blank</span>
+		<span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.errors && myform.controls.lastname.errors.minlength">Min: 5 characters</span>
+		<span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.errors && myform.controls.lastname.errors.maxlength">Max: 20 characters</span>
+		<span class="error" *ngIf="myform.controls.lastname.touched && myform.controls.lastname.errors && myform.controls.lastname.errors.pattern">Alphabets only allowed</span>
+		<br>
+		
+		Email:
+		<input type="text" formControlName="email">
+		<span class="error" *ngIf="myform.controls.email.touched && myform.controls.email.errors && myform.controls.email.errors.required">Email can't be blank</span>
+		<span class="error" *ngIf="myform.controls.email.touched && myform.controls.email.errors && myform.controls.email.errors.pattern">Email is not valid</span>
+		<br>
+		
+		Amount:
+		<input type="text" formControlName="amount">
+		<span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.errors && myform.controls.amount.errors.required">Amount can't be blank</span>
+		<span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.errors && myform.controls.amount.errors.pattern">Alphabets not allowed</span>
+		<br>
+
+		Gender:
+		<input type="radio" formControlName="gender" value="male">
+		Male
+		<input type="radio" formControlName="gender" value="female">
+		Female
+		<span class="error" *ngIf="myform.controls.gender.touched && myform.controls.gender.errors && myform.controls.gender.errors.required">Plase Select Gender</span>
+		<br>
+		
+		Country:
+		<select formControlName="country">
+			<option>Please Select</option>
+			<option>India</option>
+			<option>USA</option>
+			<option>UK</option>
+			<option>Japan</option>
+		</select>
+		<span class="error" *ngIf="myform.controls.country.touched && myform.controls.country.errors && myform.controls.country.errors.required">Plase Select Country</span>
+		<br>
+		
+		<input type="submit" value="Submit" (click)="RegisterClick()"><br>
+		<div [innerHTML]="msg"></div>
+		
+	</form>
+</div>
+
+
+
+
+
+
+

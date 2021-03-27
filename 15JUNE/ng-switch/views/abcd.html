@@ -1,0 +1,24 @@
+Welcome to abcd
+{{city}}
+<select [(ngModel)]="city">
+<option>Hyderabad</option>
+<option>Vizag</option>
+<option>Amalapuram</option>
+</select>
+<div [ngSwitch]="city">
+	<div *ngSwitchCase="'Hyderabad'">
+	<h1>Hyderabad</h1>
+	</div>
+	<div *ngSwitchCase="'Vizag'">
+	<h1>Vizag</h1>
+	</div>
+	<div *ngSwitchCase="'Amalapuram'">
+	<h1>Amalapuram</h1>
+	</div>
+	<div *ngSwitchDefault>
+	<h1>India</h1>
+	</div>
+	<div>
+	<h2> Welcomes you</h2>
+	</div>
+</div>

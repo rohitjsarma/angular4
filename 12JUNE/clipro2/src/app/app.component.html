@@ -1,0 +1,17 @@
+<span class="abc">Hi all</span>
+<input type="button" value="Click" (click)="fun1()">
+<br><br>
+<input type="text" class="form-control" placeholder="Search..." [(ngModel)]="t1" >
+<br>
+<table class="table table-responsive table-bordered">
+    <th (click)="chngorder('uname')">Uname
+        <span class="glyphicon short-icon" [ngClass]="{'glyphicon-chevron-down':ord,'glyphicon-chevron-up':!ord}"></span>
+    </th>
+    <th (click)="chngorder('city')">City
+
+    </th>
+    <tr *ngFor="let x of obj1 | filter:t1 | orderBy:colname:ord | paginate:{itemsPerPage:2,currentPage:pno} ">
+        <td>{{x.uname}}</td><td>{{x.city}}</td>
+    </tr>
+</table>
+<pagination-controls (pageChange)="pno=$event"></pagination-controls>

@@ -1,0 +1,8 @@
+{
+"compilerOptions":{
+"target":"Es5",
+"sourceMap":false,
+"experimentalDecorators":true,
+"lib":["es2015","dom"]
+}
+}

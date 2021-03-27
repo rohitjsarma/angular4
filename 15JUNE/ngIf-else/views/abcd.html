@@ -1,0 +1,10 @@
+Welcome to abcd
+<input type="button" value="Click" (click)="a=50">
+{{a}}
+<div *ngIf="a>100; else tmpelse">
+<h1>A is GT 100</h1>
+</div>
+
+<ng-template #tmpelse>
+<h2>A is LT 100</h2>
+</ng-template>

@@ -1,0 +1,20 @@
+{
+	"name": "mypackage",
+	"version": "1.0.0",
+	"description": "this is my package",
+	"license": "ISC",
+	"repository": "none",
+	"dependencies": {
+		"@angular/core": "5.2.10",
+		"@angular/common": "5.2.10",
+		"@angular/platform-browser": "5.2.10",
+		"@angular/compiler": "5.2.10",
+		"@angular/platform-browser-dynamic": "5.2.10",
+		"@angular/forms": "5.2.10",
+		"@angular/animations": "5.2.10",
+		"systemjs": "latest",
+		"core-js": "latest",
+		"rxjs": "5.5.6",
+		"zone.js": "latest"
+	}
+}
